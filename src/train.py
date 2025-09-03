@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -76,5 +77,6 @@ print("MAE:", mean_absolute_error(y_test, y_pred))
 print("RMSE:", np.sqrt(mean_squared_error(y_test, y_pred)))
 print("R²:", r2_score(y_test, y_pred))
 
+os.makedirs("../models", exist_ok=True)
 joblib.dump(model, "../models/profit_predictor.pkl")
 print("Model saved to ../models/profit_predictor.pkl")
